@@ -1,0 +1,133 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Orbitron", "Nunito", sans-serif;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #0a0f1a, #030b17);
+}
+
+/* Video BG */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Game Container */
+#game-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Scoreboard */
+#score {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #00d0ff;
+  font-size: 2rem;
+  background: rgba(0, 64, 128, 0.2);
+  border: 2px solid #0088cc;
+  border-radius: 20px;
+  padding: 10px 24px;
+  z-index: 2;
+  box-shadow: 0 0 12px #00bfff88;
+  text-shadow: 0 0 8px #0088cc;
+}
+
+/* Game Canvas */
+#game-canvas {
+  background: transparent;
+  display: block;
+  margin: 0 auto;
+  border-radius: 24px;
+  box-shadow: 0 0 40px #00bcd4aa;
+  z-index: 2;
+}
+
+/* Overlay Styling */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(10px); /* <- adds blur effect */
+  background: rgba(0, 8, 20, 0.4); /* semi-transparent dark overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
+}
+
+/* Title Text */
+.overlay h1 {
+  font-size: 3rem;
+  color: #00c4ff;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 15px #007acc;
+}
+
+/* Start Button */
+.overlay button {
+  font-size: 2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #005bea, #00c6fb);
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 0 20px #007acc;
+  transition: all 0.3s ease-in-out;
+}
+
+.overlay button:hover {
+  background: linear-gradient(90deg, #00c6fb, #005bea);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00c6ff;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  #score {
+    font-size: 1.2rem;
+    padding: 6px 12px;
+  }
+
+  .overlay h1 {
+    font-size: 2rem;
+  }
+
+  .overlay button {
+    font-size: 1.2rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* Visual Elements */
+#spaceship,
+.monster {
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.8));
+  transition: transform 0.2s ease-in-out;
+}
+
+.bullet {
+  background: linear-gradient(to top, #00bcd4, #00e5ff);
+  box-shadow: 0 0 12px #00e5ff;
+}

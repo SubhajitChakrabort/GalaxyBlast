@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galaxy Blaster</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Video Background -->
+    <video id="bg-video" autoplay loop muted playsinline>
+      <source src="1123.mp4" type="video/mp4" />
+    </video>
+    <!-- Game UI -->
+    <div id="game-container">
+      <div id="score">Score: 0</div>
+      <canvas id="game-canvas"></canvas>
+      <div id="start-screen" class="overlay">
+        <h1><b>Galaxy Blaster Jr.</b></h1>
+        <button id="start-btn">Start Game</button>
+      </div>
+      <div id="victory-screen" class="overlay" style="display: none">
+        <h1><b>Yay! You save our Planet</b></h1>
+        <p><b> OUR HERO !</b></p>
+        <button id="restart-btn">Play Again</button>
+      </div>
+    </div>
+    <audio id="bg-music" src="bg-music.mp3" loop></audio>
+    <audio id="background-song" src="background_song.mp3" loop></audio>
+    <script src="game.js"></script>
+  </body>
+</html>
